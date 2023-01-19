@@ -1,0 +1,22 @@
+main {
+  width: 100vw;
+  max-width: 1480px;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.sidenav {
+  width: 10%;
+  max-width: 200px;
+  height: 100%;
+  float: left;
+  background-color: aquamarine; // delete after test
+}
+// fix float
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
