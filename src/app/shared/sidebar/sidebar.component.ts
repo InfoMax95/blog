@@ -8,8 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   // items for menù
-  items: string[] = [
-    "Home", "Video", "Contact", "About"
+  items: any = [
+    {
+      name: "Home",
+      value: "/homepage"
+    }, 
+    {
+      name: "Video",
+      value: "/video"
+    }, 
+    {
+      name: "Contact",
+      value: "/contact"
+    }, 
+    {
+      name: "About",
+      value: "/homepage"
+    }, 
   ];
 
   constructor() { }
