@@ -10,19 +10,41 @@
         .main-left-up {
             width: 100%;
             height: 50%;
-            background-color: chocolate;
+            background-color: chocolate; // to delete
+            display: flex;
+            .image {
+                width: 50%;
+            }
+            p {
+                width: 50%;
+            }
         }
         .main-left-down {
             width: 100%;
             height: 50%;
-            background-color: green;
+            background-color: green; // to delete
+            display: flex;
+            .videos {
+                height: 80%;
+                width: calc(100% / 4 - 40px);
+                margin: auto 20px;
+                background-color: black; // to delete
+            }
         }
     }
     .main-right {
         width: 30%;
         height: 100%;
-        background-color: violet;
-        float: right; // da eliminare dopo test
+        background-color: violet; // to delete
+        margin-left: 70%;
+        display: flex;
+        flex-direction: column;
+        .card {
+            width: 80%;
+            height: calc(100% / 4 - 40px);
+            margin: 20px auto;
+            background-color: black; // to delete
+        }
     }
     &::after {
         content: '';

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PostComponent } from './components/post/post.component';
 import { VideoComponent } from './components/video/video.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   // },
   {path: 'video', component: VideoComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'post', component: PostComponent},
   {
     path: '404',
     component: NotFoundComponent
