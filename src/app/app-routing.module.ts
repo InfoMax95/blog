@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { VideoComponent } from './components/video/video.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage' },
@@ -10,12 +13,12 @@ const routes: Routes = [
   //   {path: 'pagina1', component: Pagina1Component},
   // ]
   // },
-  // {path: 'login', component: LoginComponent},
-  // {path: 'register', component: RegisterComponent},
-  // {
-  //   path: '404',
-  //   component: NotFoundComponent
-  // },
+  {path: 'video', component: VideoComponent},
+  {path: 'contact', component: ContactComponent},
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
   // questo va sempre inserito come ultima path altrimenti rischiamo che prenda sempre questo
   {
     path: '**', // questo indica qualsiasi indirizzo diverso dai nostri
