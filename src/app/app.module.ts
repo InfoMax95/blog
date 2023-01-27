@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostCardComponent } from './shared/post-card/post-card.component';
 import { VideoCardComponent } from './shared/video-card/video-card.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VideoCardComponent } from './shared/video-card/video-card.component';
     ContactComponent,
     NotFoundComponent,
     PostCardComponent,
-    VideoCardComponent
+    VideoCardComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

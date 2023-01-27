@@ -18,6 +18,10 @@ export class SidebarComponent implements OnInit {
       value: "/video"
     }, 
     {
+      name: "Post",
+      value: "/post"
+    }, 
+    {
       name: "Contact",
       value: "/contact"
     }, 
