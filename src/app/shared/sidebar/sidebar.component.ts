@@ -12,23 +12,23 @@ export class SidebarComponent implements OnInit {
     {
       name: "Home",
       value: "/homepage"
-    }, 
+    },
     {
       name: "Video",
       value: "/video"
-    }, 
+    },
     {
       name: "Post",
       value: "/post"
-    }, 
+    },
     {
       name: "Contact",
       value: "/contact"
-    }, 
+    },
     {
       name: "About",
-      value: "/homepage"
-    }, 
+      value: "/about"
+    },
   ];
 
   constructor() { }

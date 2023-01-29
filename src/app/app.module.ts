@@ -12,6 +12,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostCardComponent } from './shared/post-card/post-card.component';
 import { VideoCardComponent } from './shared/video-card/video-card.component';
 import { PostComponent } from './components/post/post.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PostComponent } from './components/post/post.component';
     NotFoundComponent,
     PostCardComponent,
     VideoCardComponent,
-    PostComponent
+    PostComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
