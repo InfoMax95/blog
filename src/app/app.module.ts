@@ -12,6 +12,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostCardComponent } from './shared/post-card/post-card.component';
 import { VideoCardComponent } from './shared/video-card/video-card.component';
 import { PostComponent } from './components/post/post.component';
+import { PostBigCardComponent } from './shared/post-big-card/post-big-card.component';
+import { VideoBigCardComponent } from './shared/video-big-card/video-big-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PostComponent } from './components/post/post.component';
     NotFoundComponent,
     PostCardComponent,
     VideoCardComponent,
-    PostComponent
+    PostComponent,
+    PostBigCardComponent,
+    VideoBigCardComponent
   ],
   imports: [
     BrowserModule,
