@@ -14,6 +14,7 @@ import { VideoCardComponent } from './shared/video-card/video-card.component';
 import { PostComponent } from './components/post/post.component';
 import { PostBigCardComponent } from './shared/post-big-card/post-big-card.component';
 import { VideoBigCardComponent } from './shared/video-big-card/video-big-card.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { VideoBigCardComponent } from './shared/video-big-card/video-big-card.co
     VideoCardComponent,
     PostComponent,
     PostBigCardComponent,
-    VideoBigCardComponent
+    VideoBigCardComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
