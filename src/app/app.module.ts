@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,15 @@ import { PostComponent } from './components/post/post.component';
 import { PostBigCardComponent } from './shared/post-big-card/post-big-card.component';
 import { VideoBigCardComponent } from './shared/video-big-card/video-big-card.component';
 import { AboutComponent } from './components/about/about.component';
+import { CreatePostComponent } from './components/admin/create-post/create-post.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { ViewPostsComponent } from './components/admin/view-posts/view-posts.component';
+import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -29,12 +39,23 @@ import { AboutComponent } from './components/about/about.component';
     PostComponent,
     PostBigCardComponent,
     VideoBigCardComponent,
-    AboutComponent
+    AboutComponent,
+    CreatePostComponent,
+    ViewPostsComponent,
+    UpdatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

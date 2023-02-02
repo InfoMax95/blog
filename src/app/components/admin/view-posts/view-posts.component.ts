@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ApiHttpService } from 'src/app/services/api-http.service';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  selector: 'app-view-posts',
+  templateUrl: './view-posts.component.html',
+  styleUrls: ['./view-posts.component.scss']
 })
-export class PostComponent implements OnInit {
+export class ViewPostsComponent implements OnInit {
+
+  displayedColumns: string[] = ['id', 'title', 'description', 'content', 'action'];
+  dataSource: any = [];
 
   posts: any = [];
 
@@ -19,10 +22,10 @@ export class PostComponent implements OnInit {
   /**
    * getPosts
    */
-  public getPosts() {
+   public getPosts() {
     this.api.get('https://localhost:7171/api/Posts').subscribe((data) => {
       console.log(data);
-      this.posts = data;
+      this.dataSource = data;
     }, (error) => {console.log(error)})
   }
 
