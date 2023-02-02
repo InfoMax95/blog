@@ -22,9 +22,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { ViewPostsComponent } from './components/admin/view-posts/view-posts.component';
+import { ViewPostComponent } from './components/admin/view-post/view-post.component';
 import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
 import {MatTableModule} from '@angular/material/table';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +42,9 @@ import {MatTableModule} from '@angular/material/table';
     VideoBigCardComponent,
     AboutComponent,
     CreatePostComponent,
-    ViewPostsComponent,
-    UpdatePostComponent
+    ViewPostComponent,
+    UpdatePostComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

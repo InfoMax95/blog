@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { CreatePostComponent } from './components/admin/create-post/create-post.component';
 import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
-import { ViewPostsComponent } from './components/admin/view-posts/view-posts.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -14,16 +14,14 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage' },
   {path: 'homepage', component: HomeComponent },
-  {path: 'admin', component: ViewPostsComponent, canActivate: [AuthGuard],canActivateChild: [AuthGuard], children: [
-    {
-      path: 'add',
-      component: CreatePostComponent
-    },
-    {
-      path: ':id',
-      component: UpdatePostComponent
-    }
-  ]},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard],canActivateChild: [AuthGuard], children: [
+      {
+        path: ':id',
+        component: UpdatePostComponent
+      }
+    ]
+  },
+  {path: 'add', component: CreatePostComponent},
   {path: 'video', component: VideoComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},

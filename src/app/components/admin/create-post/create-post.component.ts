@@ -19,9 +19,9 @@ export class CreatePostComponent implements OnInit {
       content: new FormControl(null, Validators.required),
       subtitle: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
-      author: new FormControl(null, Validators.required),
-      created_at: new FormControl(null, Validators.required),
-      updated_at: new FormControl(null, Validators.required),
+      authorID: new FormControl(null, Validators.required),
+      created_at: new FormControl(new Date(), Validators.required),
+      updated_at: new FormControl(new Date(), Validators.required),
     });
   }
 
@@ -36,7 +36,21 @@ export class CreatePostComponent implements OnInit {
   public createPost() {
     let fieldValue = this.homeForm.value;
     console.log(fieldValue);
-    //this.api.post('https://localhost:7171/api/Posts', fieldValue)
+    let data = {
+      "id": 0,
+      "title": "string",
+      "content": "string",
+      "subtitle": "string",
+      "description": "string",
+      "authorID": 0,
+      "created_At": "2023-02-02T13:33:16.830Z",
+      "updated_At": "2023-02-02T13:33:16.830Z"
+    }
+    this.api.post('https://localhost:7171/api/Posts', fieldValue).subscribe((res) => {
+      console.log(res);
+    }, (error) => {
+      console.log(error)
+    })
   }
 
 }
