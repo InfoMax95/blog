@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiHttpService } from 'src/app/services/api-http.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-admin',
@@ -13,21 +14,12 @@ export class AdminComponent implements OnInit {
 
   posts: any = [];
 
-  constructor(private api: ApiHttpService) { }
+  constructor(private postService: PostsService) { }
 
   ngOnInit(): void {
-    this.getPosts();
+    this.dataSource = this.postService.getPosts();
+    console.log(this.posts);
+    console.log(this.dataSource);
   }
-
-  /**
-   * getPosts
-   */
-   public getPosts() {
-    this.api.get('https://localhost:7171/api/Posts').subscribe((data) => {
-      console.log(data);
-      this.dataSource = data;
-    }, (error) => {console.log(error)})
-  }
-
 
 }

@@ -4,6 +4,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CreatePostComponent } from './components/admin/create-post/create-post.component';
 import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
+import { ViewPostComponent } from './components/admin/view-post/view-post.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -18,10 +19,12 @@ const routes: Routes = [
       {
         path: ':id',
         component: UpdatePostComponent
-      }
+      },
     ]
   },
-  {path: 'add', component: CreatePostComponent},
+  {path: 'add', component: CreatePostComponent, canActivate: [AuthGuard]},
+  {path: 'open/:id', component: ViewPostComponent, canActivate: [AuthGuard]},
+  {path: 'update/:id', component: UpdatePostComponent, canActivate: [AuthGuard]},
   {path: 'video', component: VideoComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},

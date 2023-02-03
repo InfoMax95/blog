@@ -32,8 +32,8 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Action </th>
     <td mat-cell *matCellDef="let element">
-      <button mat-raised-button color="primary">Open</button>
-      <button mat-raised-button color="accent">Update</button>
+      <button mat-raised-button color="primary" routerLink="/open/{{element.id}}">Open</button>
+      <button mat-raised-button color="accent" routerLink="/update/{{element.id}}">Update</button>
       <button mat-raised-button color="warn">Delete</button>
     </td>
   </ng-container>

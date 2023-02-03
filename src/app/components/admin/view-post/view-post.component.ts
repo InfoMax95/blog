@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiHttpService } from 'src/app/services/api-http.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-view-post',
@@ -8,25 +10,19 @@ import { ApiHttpService } from 'src/app/services/api-http.service';
 })
 export class ViewPostComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title', 'description', 'content', 'action'];
-  dataSource: any = [];
+  public post: any;
 
-  posts: any = [];
+  public id: number;
 
-  constructor(private api: ApiHttpService) { }
+  constructor(private route: ActivatedRoute, private postService: PostsService) { }
 
   ngOnInit(): void {
-    this.getPosts();
-  }
-
-  /**
-   * getPosts
-   */
-   public getPosts() {
-    this.api.get('https://localhost:7171/api/Posts').subscribe((data) => {
-      console.log(data);
-      this.dataSource = data;
-    }, (error) => {console.log(error)})
+    // Get parameter from routing
+    this.route.paramMap.subscribe((params: ParamMap)=> {
+      this.id = +params.get('id')!;
+      console.log(this.id);
+      this.post = this.postService.getPostById(this.id);
+    });
   }
 
 }
