@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiHttpService } from 'src/app/services/api-http.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiHttpService) { }
 
   ngOnInit(): void {
+    this.api.get('https://localhost:7171/api/Posts').subscribe((data) => {
+      console.log(data);
+    },(error) => {console.log(error)})
   }
 
 }

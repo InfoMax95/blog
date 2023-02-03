@@ -5,27 +5,11 @@
         <li>Prova!!!!</li>
         <li>Prova!!!!</li>
         <li>Prova!!!!</li>
-        <li>Prova!!!!</li>
-        <li>Prova!!!!</li>
-        <li>Prova!!!!</li>
-        <li>Prova!!!!</li>
       </ul>
     </div>
     <div class="main">
-      <div class="post-card">
-        <app-post-big-card></app-post-big-card>
-      </div>
-      <div class="post-card">
-        <app-post-big-card></app-post-big-card>
-      </div>
-      <div class="post-card">
-        <app-post-big-card></app-post-big-card>
-      </div>
-      <div class="post-card">
-        <app-post-big-card></app-post-big-card>
-      </div>
-      <div class="post-card">
-        <app-post-big-card></app-post-big-card>
+      <div class="post-card" *ngFor="let post of posts; index as i">
+        <app-post-big-card [post]="post"></app-post-big-card>
       </div>
     </div>
   </div>
