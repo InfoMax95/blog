@@ -19,7 +19,7 @@ export class CreatePostComponent implements OnInit {
       content: new FormControl(null, Validators.required),
       subtitle: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
-      authorID: new FormControl(null, Validators.required),
+      authorID: new FormControl(1, Validators.required),
       created_at: new FormControl(new Date(), Validators.required),
       updated_at: new FormControl(new Date(), Validators.required),
     });
@@ -48,6 +48,7 @@ export class CreatePostComponent implements OnInit {
     }
     this.api.post('https://localhost:7171/api/Posts', fieldValue).subscribe((res) => {
       console.log(res);
+      this.homeForm.reset();
     }, (error) => {
       console.log(error)
     })

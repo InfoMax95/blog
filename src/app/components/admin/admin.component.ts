@@ -14,12 +14,23 @@ export class AdminComponent implements OnInit {
 
   posts: any = [];
 
-  constructor(private postService: PostsService) { }
+  constructor(private postService: PostsService, private api: ApiHttpService) { }
 
   ngOnInit(): void {
-    this.dataSource = this.postService.getPosts();
-    console.log(this.posts);
-    console.log(this.dataSource);
+    //this.dataSource = this.postService.getPosts();
+    this.getPosts();
+    //console.log(this.posts);
+    //console.log(this.dataSource);
+  }
+
+  public getPosts() {
+    this.api.get('https://localhost:7171/api/Posts').subscribe((res) => {
+      console.log(res);
+      this.dataSource = res;
+    }, (error) => {
+      console.log(error);
+      return error;
+    })
   }
 
 }

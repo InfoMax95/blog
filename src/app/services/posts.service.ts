@@ -16,10 +16,11 @@ export class PostsService {
   public getPosts() {
     this.api.get('https://localhost:7171/api/Posts').subscribe((res) => {
       console.log(res);
-      return res;
+      this.posts = res;
+      // return res;
     }, (error) => {
       console.log(error);
-      return error;
+      // return error;
     })
   }
 
