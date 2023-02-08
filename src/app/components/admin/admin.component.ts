@@ -12,15 +12,10 @@ export class AdminComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'description', 'content', 'action'];
   dataSource: any = [];
 
-  posts: any = [];
-
   constructor(private postService: PostsService, private api: ApiHttpService) { }
 
   ngOnInit(): void {
-    //this.dataSource = this.postService.getPosts();
     this.getPosts();
-    //console.log(this.posts);
-    //console.log(this.dataSource);
   }
 
   public getPosts() {
@@ -29,7 +24,6 @@ export class AdminComponent implements OnInit {
       this.dataSource = res;
     }, (error) => {
       console.log(error);
-      return error;
     })
   }
 

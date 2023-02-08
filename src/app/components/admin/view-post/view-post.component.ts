@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiHttpService } from 'src/app/services/api-http.service';
 import { PostsService } from 'src/app/services/posts.service';
@@ -10,13 +10,14 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class ViewPostComponent implements OnInit {
 
-  public post: any;
+  @Input() post: any;
 
   public id: number;
 
   constructor(private route: ActivatedRoute, private postService: PostsService) { }
 
   ngOnInit(): void {
+    console.log(this.post);
     // Get parameter from routing
     this.route.paramMap.subscribe((params: ParamMap)=> {
       this.id = +params.get('id')!;

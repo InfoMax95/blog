@@ -16,15 +16,24 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage' },
   {path: 'homepage', component: HomeComponent },
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard],canActivateChild: [AuthGuard], children: [
+      // {
+      //   path: ':id',
+      //   component: UpdatePostComponent
+      // },
       {
         path: ':id',
-        component: UpdatePostComponent
+        component: ViewPostComponent
+      },
+      {
+        path: 'add/add',
+        component: CreatePostComponent,
+      },
+      {
+        path: 'update/:id',
+        component: UpdatePostComponent,
       },
     ]
   },
-  {path: 'add', component: CreatePostComponent, canActivate: [AuthGuard]},
-  {path: 'open/:id', component: ViewPostComponent, canActivate: [AuthGuard]},
-  {path: 'update/:id', component: UpdatePostComponent, canActivate: [AuthGuard]},
   {path: 'video', component: VideoComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},
