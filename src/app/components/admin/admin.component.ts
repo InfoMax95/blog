@@ -8,7 +8,7 @@ import { PostsService } from 'src/app/services/posts.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent implements OnInit, AfterViewInit {
+export class AdminComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'title', 'description', 'content', 'action'];
   dataSource: any = [];
@@ -19,11 +19,11 @@ export class AdminComponent implements OnInit, AfterViewInit {
     this.getPosts();
   }
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
   public getPosts() {
     this.api.get('https://localhost:7171/api/Posts').subscribe((res) => {
