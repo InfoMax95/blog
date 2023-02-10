@@ -12,17 +12,20 @@ export class ViewPostComponent implements OnInit {
 
   @Input() post: any;
 
+  element: any = {};
+
   public id: number;
 
   constructor(private route: ActivatedRoute, private postService: PostsService) { }
 
   ngOnInit(): void {
-    console.log(this.post);
     // Get parameter from routing
     this.route.paramMap.subscribe((params: ParamMap)=> {
       this.id = +params.get('id')!;
       console.log(this.id);
-      this.post = this.postService.getPostById(this.id);
+      //this.post = this.postService.getPostById(this.id);
+      this.element = this.postService.getPostById(this.id);
+      console.log(this.element);
     });
   }
 
