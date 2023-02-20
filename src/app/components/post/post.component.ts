@@ -11,6 +11,10 @@ export class PostComponent implements OnInit {
 
   post: any = {};
 
+  existImage: boolean = false;
+  imageFirstContentExist: boolean = false;
+  imageSecondContentExist: boolean = false;
+
   public id: number;
 
   constructor( private route: ActivatedRoute,private api: ApiHttpService) { }

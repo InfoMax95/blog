@@ -1,7 +1,36 @@
 .container-post {
-  width: 80%;
+  width: 70%;
   margin: auto;
-  h1 {
-    margin-top: 2rem;
+  font-size: 1rem;
+  .image-background {
+    img {
+      width: 100%;
+      max-height: 500px;
+      margin-top: 2rem;
+    }
   }
+  .title {
+    margin-top: 150px;
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+  .line-separator {
+    width: 150px;
+    height: 5px;
+    background-color: grey;
+    margin-bottom: 2rem;
+  }
+  .first-content {
+    font-style: italic;
+  }
+  .image-content, .image-example {
+    img {
+      width: 100%;
+      max-height: 500px;
+    }
+  }
+}
+
+.first-content, .second-content, .description, .footer {
+  margin: 3.5rem 0;
 }
