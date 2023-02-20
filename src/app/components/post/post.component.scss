@@ -5,7 +5,7 @@
   .image-background {
     img {
       width: 100%;
-      max-height: 500px;
+      max-height: 600px;
       margin-top: 2rem;
     }
   }
@@ -33,4 +33,5 @@
 
 .first-content, .second-content, .description, .footer {
   margin: 3.5rem 0;
+  line-height: 1.6;
 }
