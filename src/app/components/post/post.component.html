@@ -1,8 +1,15 @@
 <div class="container-post">
-  <div class="image-background" *ngIf=""></div>
-  <h1>Automate Posting to Mastodon via Web Requests</h1>
+  <div class="image-background" *ngIf="existImage; else img_default">
+    <img src="" alt="">
+  </div>
+  <ng-template #img_default>
+    <div class="image-background">
+      <img src="../../assets/images/jumbo.jpg" alt="default-img">
+    </div>
+  </ng-template>
+  <h1 class="title">Automate Posting to Mastodon via Web Requests</h1>
   <div class="line-separator"></div>
-  <p class="content">
+  <p class="first-content">
     One of my favorite applications that I use for automation is
     If This Then That aka IFTTT. I have been using it forever and
     it allows you to automate a plethora of things when something
@@ -13,5 +20,48 @@
     I often have automation setup on RSS feeds or my YouTube feed when
     I post something that it automatically Tweets it out and posts it to
     a Discord channel:
+  </p>
+  <div class="image-content" *ngIf="imageFirstContentExist; else img_first_default">
+    <img src="" alt="">
+  </div>
+  <ng-template #img_first_default>
+    <div class="image-content">
+      <img src="../../assets/images/jumbo.jpg" alt="default-img">
+    </div>
+  </ng-template>
+  <p class="second-content">
+    One of my favorite applications that I use for automation is
+    If This Then That aka IFTTT. I have been using it forever and
+    it allows you to automate a plethora of things when something
+    happens. For example, maybe you want ot create a spreadsheet of
+    every favorited tweet you have, or maybe save them to a list somewhere,
+    or maybe automatically turn on your lights at sunset.
+    All of this is possible with IFTTT and is crazy easy to use with connectors.
+    I often have automation setup on RSS feeds or my YouTube feed when
+    I post something that it automatically Tweets it out and posts it to
+    a Discord channel:
+  </p>
+  <p class="description">
+    You know I love talking about in app purchases and subscriptions.
+    Due to my InAppBilling library I get all the "fun" updates when Apple
+    or Google force developers to make changes to stay compliant.
+    Upcoming is a nice large change from Google to push Android developers
+    to use Billing v4 (which my library does!) and another is that we must
+    now give users a way to easily manage and cancel their subscriptions.
+    You may have recently seen this message from google:
+  </p>
+  <div class="image-example" *ngIf="imageSecondContentExist; else img_second_default">
+    <img src="" alt="">
+  </div>
+  <ng-template #img_second_default>
+    <div class="image-example">
+      <img src="../../assets/images/jumbo.jpg" alt="default-img">
+    </div>
+  </ng-template>
+  <p class="footer">
+    Want to learn more? Be sure to read the full documentation on Configuration in
+    .NET. Full source code example can be found on GitHub right here!
+    Want to go farther? Check out Allan Ritchie's awesome Shiny Extensions library
+    at https://github.com/shinyorg/configurationextensions
   </p>
 </div>
