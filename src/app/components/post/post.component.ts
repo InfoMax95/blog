@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiHttpService } from 'src/app/services/api-http.service';
 
 @Component({
@@ -8,22 +9,30 @@ import { ApiHttpService } from 'src/app/services/api-http.service';
 })
 export class PostComponent implements OnInit {
 
-  posts: any = [];
+  post: any = {};
 
-  constructor(private api: ApiHttpService) { }
+  public id: number;
+
+  constructor( private route: ActivatedRoute,private api: ApiHttpService) { }
 
   ngOnInit(): void {
-    this.getPosts();
+    this.route.paramMap.subscribe((params: ParamMap)=> {
+      this.id = +params.get('id')!;
+      console.log(this.id);
+      this.getPostByID(this.id);
+    });
   }
 
   /**
-   * getPosts
+   * method to get single post
    */
-  public getPosts() {
-    this.api.get('https://localhost:7171/api/Posts').subscribe((data) => {
-      console.log(data);
-      this.posts = data;
-    }, (error) => {console.log(error)})
+   private getPostByID(index:number) {
+    this.api.get(`https://localhost:7171/api/Posts/${index}`).subscribe((res) => {
+      this.post = res;
+      console.log(this.post);
+    }, (error) => {
+      console.log(error);
+    })
   }
 
 }

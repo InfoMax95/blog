@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { ApiHttpService } from 'src/app/services/api-http.service';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -12,16 +13,17 @@ export class AdminComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'description', 'content', 'action'];
   dataSource: any = [];
 
-  posts: any = [];
-
   constructor(private postService: PostsService, private api: ApiHttpService) { }
 
   ngOnInit(): void {
-    //this.dataSource = this.postService.getPosts();
     this.getPosts();
-    //console.log(this.posts);
-    //console.log(this.dataSource);
   }
+
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
   public getPosts() {
     this.api.get('https://localhost:7171/api/Posts').subscribe((res) => {
@@ -29,8 +31,25 @@ export class AdminComponent implements OnInit {
       this.dataSource = res;
     }, (error) => {
       console.log(error);
-      return error;
     })
   }
 
+  /**
+   * delete record from db
+   */
+  public onDelete(id: number) {
+    console.log(id);
+    this.deleteRec(id);
+  }
+
+  /**
+   * function to delete
+   */
+  private deleteRec(value: number): void {
+    this.api.delete(`https://localhost:7171/api/Posts/${value}`).subscribe((res) => {
+      this.getPosts();
+    }, (error) => {
+      console.log(error);
+    })
+  }
 }

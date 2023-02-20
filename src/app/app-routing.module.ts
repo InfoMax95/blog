@@ -5,6 +5,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CreatePostComponent } from './components/admin/create-post/create-post.component';
 import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
 import { ViewPostComponent } from './components/admin/view-post/view-post.component';
+import { AppsComponent } from './components/apps/apps.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -16,19 +17,28 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage' },
   {path: 'homepage', component: HomeComponent },
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard],canActivateChild: [AuthGuard], children: [
+      // {
+      //   path: ':id',
+      //   component: UpdatePostComponent
+      // },
       {
         path: ':id',
-        component: UpdatePostComponent
+        component: ViewPostComponent
+      },
+      {
+        path: 'add/add',
+        component: CreatePostComponent,
+      },
+      {
+        path: 'update/:id',
+        component: UpdatePostComponent,
       },
     ]
   },
-  {path: 'add', component: CreatePostComponent, canActivate: [AuthGuard]},
-  {path: 'open/:id', component: ViewPostComponent, canActivate: [AuthGuard]},
-  {path: 'update/:id', component: UpdatePostComponent, canActivate: [AuthGuard]},
-  {path: 'video', component: VideoComponent},
+  {path: 'apps', component: AppsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'post', component: PostComponent},
+  {path: 'post/:id', component: PostComponent},
   {
     path: '404',
     component: NotFoundComponent

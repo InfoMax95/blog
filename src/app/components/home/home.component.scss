@@ -1,54 +1,18 @@
 .home {
+  .image {
     width: 100%;
-    height: 100%;
-    .main-left {
-        float: left;
-        width: 70%;
-        height: 100%;
-        padding: 20px;
-        background-color: red; // da eliminare dopo test
-        .main-left-up {
-            width: 100%;
-            height: 50%;
-            background-color: chocolate; // to delete
-            display: flex;
-            .image {
-                width: 50%;
-            }
-            p {
-                width: 50%;
-            }
-        }
-        .main-left-down {
-            width: 100%;
-            height: 50%;
-            background-color: green; // to delete
-            display: flex;
-            .videos {
-                height: 80%;
-                width: calc(100% / 4 - 40px);
-                margin: auto 20px;
-                background-color: black; // to delete
-            }
-        }
+    // max-height: calc(100vh - 50px);
+    img {
+      width: 100%;
+      max-height: calc(100vh - 50px);
+      object-fit: cover;
+      opacity: 0.7;
     }
-    .main-right {
-        width: 30%;
-        height: 100%;
-        background-color: violet; // to delete
-        margin-left: 70%;
-        display: flex;
-        flex-direction: column;
-        .card {
-            width: 80%;
-            height: calc(100% / 4 - 40px);
-            margin: 20px auto;
-            background-color: black; // to delete
-        }
-    }
-    &::after {
-        content: '';
-        clear: both;
-        display: table;
-    }
+  }
+  .posts {
+    width: 80%;
+    margin: auto;
+    //height: 400px;
+    background-color: cornflowerblue;
+  }
 }

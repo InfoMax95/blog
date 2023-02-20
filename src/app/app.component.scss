@@ -1,27 +1,7 @@
-main {
-  width: 100vw;
-  max-width: 1920px;
-  height: 100vh;
-}
 .container {
-  width: 100%;
-  height: 100%;
+  max-width: 1920px;
+  margin: auto;
 }
-.sidebar {
-  width: 10%;
-  max-width: 200px;
-  height: 100%;
-  float: left;
-  background-color: aquamarine; // delete after test
-}
-.router {
-  width: 90%;
-  height: 100%;
-  margin-left: 10%;
-}
-// fix float
-.container::after {
-  content: '';
-  clear: both;
-  display: table;
+.toolbar {
+  height: 50px;
 }

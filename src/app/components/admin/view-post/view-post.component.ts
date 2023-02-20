@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ApiHttpService } from 'src/app/services/api-http.service';
 import { PostsService } from 'src/app/services/posts.service';
@@ -10,19 +10,35 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class ViewPostComponent implements OnInit {
 
-  public post: any;
+  element: any = {};
 
   public id: number;
 
-  constructor(private route: ActivatedRoute, private postService: PostsService) { }
+  constructor(
+    private route: ActivatedRoute,
+    //private postService: PostsService,
+    private api: ApiHttpService
+  ) { }
 
   ngOnInit(): void {
     // Get parameter from routing
     this.route.paramMap.subscribe((params: ParamMap)=> {
       this.id = +params.get('id')!;
       console.log(this.id);
-      this.post = this.postService.getPostById(this.id);
+      this.getPostByID(this.id);
     });
+  }
+
+  /**
+   * method to get single post
+   */
+  private getPostByID(index:number) {
+    this.api.get(`https://localhost:7171/api/Posts/${index}`).subscribe((res) => {
+      console.log(res);
+      this.element = res;
+    }, (error) => {
+      console.log(error);
+    })
   }
 
 }
