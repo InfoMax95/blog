@@ -3,14 +3,27 @@
     height: 100%;
     background: radial-gradient(#022539, #06364d);
     color: 06364d;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  img {
+    border-radius: 50%;
+    max-width: 40px;
+    max-height: 40px;
+  }
 }
 ul {
     width: 40%;
-    margin: auto;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style: none;
 }
 li {
@@ -18,7 +31,8 @@ li {
     color: #fff;
     text-decoration: none;
   }
-}
-.active {
-  font-weight: bolder;
+  .active {
+    font-weight: bolder;
+    // text-decoration: underline;
+  }
 }
