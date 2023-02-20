@@ -1,7 +1,12 @@
 <div class="post">
-  <div class="image" *ngIf="">
+  <div class="image" *ngIf="imageExist; else img_default">
     <img src="" alt="">
   </div>
+  <ng-template #img_default>
+    <div class="image">
+      <img src="../../assets/images/jumbo.jpg" alt="">
+    </div>
+  </ng-template>
   <div class="details">
     <p class="type">APP RELEASE</p>
     <p class="date">SEPTEMBER 6th, 2021</p>
@@ -21,7 +26,7 @@
     </p>
   </div>
   <div class="author">
-    <img src="" alt="">
+    <img src="" alt="avatar">
     <h4>MASSIMILIANO GASARO</h4>
   </div>
 </div>

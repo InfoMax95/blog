@@ -1,8 +1,8 @@
 .container {
     width: 100%;
     height: 100%;
-    background-color: #022539;
-    opacity: 0.7;
+    background: radial-gradient(#022539, #06364d);
+    color: 06364d;
 }
 ul {
     width: 40%;
@@ -16,6 +16,7 @@ ul {
 li {
   a {
     color: #fff;
+    text-decoration: none;
   }
 }
 .active {

@@ -9,6 +9,8 @@ export class PostCardComponent implements OnInit {
 
   @Input() post: any;
 
+  imageExist: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
