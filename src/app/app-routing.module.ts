@@ -5,6 +5,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CreatePostComponent } from './components/admin/create-post/create-post.component';
 import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
 import { ViewPostComponent } from './components/admin/view-post/view-post.component';
+import { AppsComponent } from './components/apps/apps.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -34,10 +35,10 @@ const routes: Routes = [
       },
     ]
   },
-  {path: 'video', component: VideoComponent},
+  {path: 'apps', component: AppsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'post', component: PostComponent},
+  {path: 'post/:id', component: PostComponent},
   {
     path: '404',
     component: NotFoundComponent

@@ -1,23 +1,8 @@
-<section class="home">
-    <div class="main-left">
-        <div class="main-left-up">
-            <div class="image">
-                <img src="" alt="">
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla voluptate recusandae necessitatibus eaque ullam? Ratione, voluptate officiis aliquid eius dolor, sapiente quam quae magnam velit ex eos repudiandae, facere deleniti?</p>
-        </div>
-        <div class="main-left-down">
-            <div class="videos">
-                <app-video-card></app-video-card>
-            </div>
-        </div>
-    </div>
-    <div class="main-right">
-        <div class="card"> <!-- qua inseriamo un ngFor-->
-            <app-post-card></app-post-card>
-        </div>
-        <!-- <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div> -->
-    </div>
-</section>
+<div class="home">
+  <div class="image">
+    <img src="../../assets/images/background.jpg" alt="jumbo-photo">
+  </div>
+  <div class="posts" *ngFor="let post of posts; index as i">
+    <app-post-card [post]="post"></app-post-card>
+  </div>
+</div>

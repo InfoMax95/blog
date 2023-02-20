@@ -1,16 +1,17 @@
-<section class="posts">
-  <div class="posts-container">
-    <div class="toolbar">
-      <ul>
-        <li>Prova!!!!</li>
-        <li>Prova!!!!</li>
-        <li>Prova!!!!</li>
-      </ul>
-    </div>
-    <div class="main">
-      <div class="post-card" *ngFor="let post of posts; index as i">
-        <app-post-big-card [post]="post"></app-post-big-card>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="container-post">
+  <div class="image-background" *ngIf=""></div>
+  <h1>Automate Posting to Mastodon via Web Requests</h1>
+  <div class="line-separator"></div>
+  <p class="content">
+    One of my favorite applications that I use for automation is
+    If This Then That aka IFTTT. I have been using it forever and
+    it allows you to automate a plethora of things when something
+    happens. For example, maybe you want ot create a spreadsheet of
+    every favorited tweet you have, or maybe save them to a list somewhere,
+    or maybe automatically turn on your lights at sunset.
+    All of this is possible with IFTTT and is crazy easy to use with connectors.
+    I often have automation setup on RSS feeds or my YouTube feed when
+    I post something that it automatically Tweets it out and posts it to
+    a Discord channel:
+  </p>
+</div>

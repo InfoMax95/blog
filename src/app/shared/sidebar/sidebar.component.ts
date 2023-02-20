@@ -14,20 +14,16 @@ export class SidebarComponent implements OnInit {
       value: "homepage"
     },
     {
-      name: "Video",
-      value: "video"
-    },
-    {
-      name: "Post",
-      value: "post"
-    },
-    {
       name: "Contact",
       value: "contact"
     },
     {
       name: "About",
       value: "about"
+    },
+    {
+      name: "Apps",
+      value: "apps"
     },
     {
       name: "Admin",
