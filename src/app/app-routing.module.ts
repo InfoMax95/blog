@@ -16,25 +16,25 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage' },
   {path: 'homepage', component: HomeComponent },
-  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard],canActivateChild: [AuthGuard], children: [
-      // {
-      //   path: ':id',
-      //   component: UpdatePostComponent
-      // },
-      {
-        path: ':id',
-        component: ViewPostComponent
-      },
-      {
-        path: 'add/add',
-        component: CreatePostComponent,
-      },
-      {
-        path: 'update/:id',
-        component: UpdatePostComponent,
-      },
-    ]
-  },
+  // {path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
+  //     // {
+  //     //   path: ':id',
+  //     //   component: UpdatePostComponent
+  //     // },
+  //     {
+  //       path: ':id',
+  //       component: ViewPostComponent
+  //     },
+  //     {
+  //       path: 'add/add',
+  //       component: CreatePostComponent,
+  //     },
+  //     {
+  //       path: 'update/:id',
+  //       component: UpdatePostComponent,
+  //     },
+  //   ]
+  // },
   {path: 'apps', component: AppsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},

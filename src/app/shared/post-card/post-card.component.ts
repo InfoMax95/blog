@@ -9,13 +9,20 @@ export class PostCardComponent implements OnInit {
 
   @Input() post: any;
 
-  imageExist: boolean = false;
+  public imageExist: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.post);
-    console.log(this.post.id)
+    console.log(this.post.posts); // to debug
+    console.log(this.post.posts.created_At); // to debug
+    let date = new Date(this.post.posts.created_At); // to debug
+    date.toDateString();
+    console.log(date);
+    var dateParts = this.post.posts.created_At.split("-");
+    var jsDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2].substr(0,2));
+    jsDate.toDateString();
+    console.log(`${jsDate.getDay()}-${jsDate.getMonth()}-${jsDate.getFullYear()}`);
   }
 
 }

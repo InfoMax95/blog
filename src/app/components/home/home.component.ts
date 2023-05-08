@@ -20,9 +20,12 @@ export class HomeComponent implements OnInit {
    * getPosts
    */
    public getPosts() {
-    this.api.get('https://localhost:7171/api/Posts').subscribe((data) => {
-      console.log(data);
-      this.posts = data;
-    }, (error) => {console.log(error)})
+    this.api.get(`https://localhost:7171/api/Posts`).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.posts = response;
+      },
+      error: err => console.log(err),
+    })
   }
 }
