@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiHttpService } from 'src/app/services/api-http.service';
 
 @Component({
   selector: 'app-create-post',
@@ -11,7 +10,7 @@ export class CreatePostComponent implements OnInit {
 
   homeForm: FormGroup;
 
-  constructor(private api: ApiHttpService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.homeForm = new FormGroup({
@@ -46,12 +45,12 @@ export class CreatePostComponent implements OnInit {
       "created_At": "2023-02-02T13:33:16.830Z",
       "updated_At": "2023-02-02T13:33:16.830Z"
     }
-    this.api.post('https://localhost:7171/api/Posts', fieldValue).subscribe((res) => {
-      console.log(res);
-      this.homeForm.reset();
-    }, (error) => {
-      console.log(error)
-    })
+    // this.api.post('https://localhost:7171/api/Posts', fieldValue).subscribe((res) => {
+    //   console.log(res);
+    //   this.homeForm.reset();
+    // }, (error) => {
+    //   console.log(error)
+    // })
   }
 
 }

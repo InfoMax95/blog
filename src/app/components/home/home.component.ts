@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiHttpService } from 'src/app/services/api-http.service';
+import { Observable } from 'rxjs';
+import { Post } from 'src/app/models/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-home',
@@ -8,24 +10,13 @@ import { ApiHttpService } from 'src/app/services/api-http.service';
 })
 export class HomeComponent implements OnInit {
 
-  posts: any = [];
+  posts$: Observable<Post[]> | undefined;
 
-  constructor(private api: ApiHttpService) { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
-   this.getPosts();
+   this.posts$ = this.postsService.getPosts();
+   console.log(this.posts$); // to debug
   }
 
-  /**
-   * getPosts
-   */
-   public getPosts() {
-    this.api.get(`https://localhost:7171/api/Posts`).subscribe({
-      next: (response) => {
-        console.log(response);
-        this.posts = response;
-      },
-      error: err => console.log(err),
-    })
-  }
 }

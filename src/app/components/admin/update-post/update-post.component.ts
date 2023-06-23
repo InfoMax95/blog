@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ApiHttpService } from 'src/app/services/api-http.service';
-import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-update-post',
@@ -17,7 +15,7 @@ export class UpdatePostComponent implements OnInit {
 
   public post: any = {};
 
-  constructor(private api: ApiHttpService,
+  constructor(
     private route: ActivatedRoute,
     //private postService: PostsService
   ) { }
@@ -26,7 +24,7 @@ export class UpdatePostComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap)=> {
       this.id = +params.get('id')!;
       console.log(this.id);
-      this.getPostByID(this.id);
+      // this.getPostByID(this.id);
     });
     this.homeForm = new FormGroup({
       id : new FormControl(this.id, Validators.required),
@@ -44,30 +42,30 @@ export class UpdatePostComponent implements OnInit {
     console.log(this.homeForm);
     let fieldValue = this.homeForm.value;
     console.log(fieldValue);
-    this.onUpdate(this.id, fieldValue);
+    // this.onUpdate(this.id, fieldValue);
     //this.createPost();
   }
 
   /**
    * method to get single post
    */
-   private getPostByID(index:number) {
-    this.api.get(`https://localhost:7171/api/Posts/${index}`).subscribe((res) => {
-      console.log(res);
-      this.post = res;
-    }, (error) => {
-      console.log(error);
-    })
-  }
+  //  private getPostByID(index:number) {
+  //   this.api.get(`https://localhost:7171/api/Posts/${index}`).subscribe((res) => {
+  //     console.log(res);
+  //     this.post = res;
+  //   }, (error) => {
+  //     console.log(error);
+  //   })
+  // }
 
   /**
    * update post
    */
-  private onUpdate(index: number, data: object) {
-    this.api.put(`https://localhost:7171/api/Posts/${index}`, data).subscribe((res) => {
-      this.getPostByID(index);
-    }, (error) => {
-      console.log(error);
-    })
-  }
+  // private onUpdate(index: number, data: object) {
+  //   this.api.put(`https://localhost:7171/api/Posts/${index}`, data).subscribe((res) => {
+  //     this.getPostByID(index);
+  //   }, (error) => {
+  //     console.log(error);
+  //   })
+  // }
 }

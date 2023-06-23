@@ -8,19 +8,19 @@
     </div>
   </ng-template>
   <div class="details">
-    <p class="type">{{post.posts.typologies.name.toUpperCase()}}</p>
-    <p class="date">{{post.posts.createdAt}}</p>
+    <p class="type">{{post.type.toUpperCase()}}</p>
+    <p class="date">{{post.created}}</p>
   </div>
   <div class="title">
-    <h1 routerLink="/post/{{post.posts.id}}">{{post.posts.title}}</h1>
+    <h1 routerLink="/post/{{post.id}}">{{post.title}}</h1>
   </div>
   <div class="description">
     <p>
-      {{post.posts.description}}
+      {{post.description}}
     </p>
   </div>
   <div class="author">
     <img src="../../assets/images/avatar.JPG" alt="avatar">
-    <div>{{post.posts.authors.name.toUpperCase()}}</div>
+    <div>{{post.authorName.toUpperCase()}}</div>
   </div>
 </div>

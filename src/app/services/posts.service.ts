@@ -1,50 +1,37 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiHttpService } from './api-http.service';
+import { map, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Post } from '../models/post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostsService {
 
-  posts: any = [];
+  baseUrl: string = environment.apiUrl;
+  posts: Post[] = [];
 
-  constructor(private api: ApiHttpService) { }
+  constructor(private http: HttpClient) { }
 
   /**
    * getPosts
    */
   public getPosts() {
-    this.api.get('https://localhost:7171/api/Posts').subscribe((res) => {
-      console.log(res);
-      this.posts = res;
-      // return res;
-    }, (error) => {
-      console.log(error);
-      // return error;
-    })
+    return this.http.get<Post[]>(this.baseUrl + "posts").pipe(
+      map(posts => {
+        this.posts = posts;
+        return posts;
+      })
+    );
   }
 
   /**
    * getPostById
   */
- data: object = {};
-  // public getPostById(index: number): [] {
-  //   this.getPosts();
-  //   let i = 0;
-  //   while(i < this.posts.length) {
-  //     if(this.posts[i].id == index) return this.posts[i];
-  //     i++;
-  //   }
-  //   return this.posts;
-  // }
-  // secondo metodo da controllare perchè non funziona
-  public getPostById(index: number): object {
-    this.api.get(`https://localhost:7171/api/Posts/${index}`).subscribe((res) => {
-      console.log(res);
-      this.data = res;
-    }, (error) => {
-      return error;
-    })
-    return this.data;
+  public getPostById(index: number) {
+    const post = this.posts.find(x => x.id == index);
+    if(post) return of(post);
+    return this.http.get<Post>(`${this.baseUrl}posts/${index}`);
   }
 }
