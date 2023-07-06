@@ -1,40 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { CreatePostComponent } from './components/admin/create-post/create-post.component';
-import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
-import { ViewPostComponent } from './components/admin/view-post/view-post.component';
 import { AppsComponent } from './components/apps/apps.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostComponent } from './components/post/post.component';
-import { VideoComponent } from './components/video/video.component';
-import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'homepage' },
   {path: 'homepage', component: HomeComponent },
-  // {path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
-  //     // {
-  //     //   path: ':id',
-  //     //   component: UpdatePostComponent
-  //     // },
-  //     {
-  //       path: ':id',
-  //       component: ViewPostComponent
-  //     },
-  //     {
-  //       path: 'add/add',
-  //       component: CreatePostComponent,
-  //     },
-  //     {
-  //       path: 'update/:id',
-  //       component: UpdatePostComponent,
-  //     },
-  //   ]
-  // },
   {path: 'apps', component: AppsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'about', component: AboutComponent},

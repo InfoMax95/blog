@@ -1,3 +1,11 @@
-.toolbar {
-  height: 50px;
+header{
+  max-width: 1080px;
+  margin: auto;
+  .toolbar {
+    height: 50px;
+  }
+}
+main {
+  max-width: 1080px;
+  margin: auto;
 }

@@ -1,5 +1,5 @@
 <div class="home">
-  <div class="image">
+  <!-- <div class="image">
     <img src="../../assets/images/background.jpg" alt="jumbo-photo">
     <div class="me">
       <img src="../../assets/images/MG.png" alt="logo">
@@ -8,8 +8,9 @@
         <p>gasaro</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="posts" *ngFor="let post of posts$ | async">
     <app-post-card [post]="post"></app-post-card>
   </div>
+  <app-type-filter></app-type-filter>
 </div>

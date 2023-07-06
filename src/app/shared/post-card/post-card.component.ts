@@ -17,4 +17,16 @@ export class PostCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public getMainUrlFromPost(post: Post): string {
+    let i: number = 0;
+    let url: string = "";
+    while(i < post.photos.length) {
+      let photo = post.photos[i];
+      if(photo.isMain) url = photo.url;
+      else url = "../../assets/images/jumbo.jpg"; // default img
+      i++;
+    };
+    return url;
+  }
+
 }

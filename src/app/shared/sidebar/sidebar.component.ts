@@ -25,10 +25,6 @@ export class SidebarComponent implements OnInit {
       name: "Apps",
       value: "apps"
     },
-    // {
-    //   name: "Admin",
-    //   value: "admin"
-    // },
   ];
 
   constructor() { }

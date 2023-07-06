@@ -15,7 +15,9 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
   /**
-   * getPosts
+   * @method getPost
+   * @summary call base url adding posts
+   * @return array di post
    */
   public getPosts() {
     return this.http.get<Post[]>(this.baseUrl + "posts").pipe(
@@ -27,7 +29,10 @@ export class PostsService {
   }
 
   /**
-   * getPostById
+   * @param index
+   * @method getPostById
+   * @summary post with id = index
+   * @returns Post
   */
   public getPostById(index: number) {
     const post = this.posts.find(x => x.id == index);

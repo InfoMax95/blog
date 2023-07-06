@@ -1,12 +1,7 @@
 <div class="post">
-  <div class="image" *ngIf="imageExist; else img_default">
-    <img src="" alt="">
+  <div class="image">
+    <img src="{{getMainUrlFromPost(post)}}" alt="">
   </div>
-  <ng-template #img_default>
-    <div class="image">
-      <img src="../../assets/images/jumbo.jpg" alt="">
-    </div>
-  </ng-template>
   <div class="details">
     <p class="type">{{post.type.toUpperCase()}}</p>
     <p class="date">{{post.created}}</p>

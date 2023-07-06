@@ -1,0 +1,7 @@
+<div class="container">
+  <h3>Filtra per tipologia:</h3>
+  <div class="checkbox" *ngFor="let type of types">
+    <input type="checkbox" [id]="type.name" [name]="type.name" [value]="type.name">
+    <label [for]="type.name">{{type.name}}</label>
+  </div>
+</div>

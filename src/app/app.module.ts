@@ -27,6 +27,7 @@ import { UpdatePostComponent } from './components/admin/update-post/update-post.
 import {MatTableModule} from '@angular/material/table';
 import { AdminComponent } from './components/admin/admin.component';
 import { AppsComponent } from './components/apps/apps.component';
+import { TypeFilterComponent } from './shared/type-filter/type-filter.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AppsComponent } from './components/apps/apps.component';
     ViewPostComponent,
     UpdatePostComponent,
     AdminComponent,
-    AppsComponent
+    AppsComponent,
+    TypeFilterComponent
   ],
   imports: [
     BrowserModule,
