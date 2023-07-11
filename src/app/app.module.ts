@@ -13,7 +13,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PostCardComponent } from './shared/post-card/post-card.component';
 import { VideoCardComponent } from './shared/video-card/video-card.component';
 import { PostComponent } from './components/post/post.component';
-import { PostBigCardComponent } from './shared/post-big-card/post-big-card.component';
 import { VideoBigCardComponent } from './shared/video-big-card/video-big-card.component';
 import { AboutComponent } from './components/about/about.component';
 import { CreatePostComponent } from './components/admin/create-post/create-post.component';
@@ -24,10 +23,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ViewPostComponent } from './components/admin/view-post/view-post.component';
 import { UpdatePostComponent } from './components/admin/update-post/update-post.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { AdminComponent } from './components/admin/admin.component';
 import { AppsComponent } from './components/apps/apps.component';
 import { TypeFilterComponent } from './shared/type-filter/type-filter.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,6 @@ import { TypeFilterComponent } from './shared/type-filter/type-filter.component'
     PostCardComponent,
     VideoCardComponent,
     PostComponent,
-    PostBigCardComponent,
     VideoBigCardComponent,
     AboutComponent,
     CreatePostComponent,
@@ -61,7 +60,8 @@ import { TypeFilterComponent } from './shared/type-filter/type-filter.component'
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { Post } from 'src/app/models/post';
 export class PostCardComponent implements OnInit {
 
   @Input() post: Post;
+  @Input() postLength: number;
 
   public imageExist: boolean = false;
 
