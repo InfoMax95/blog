@@ -11,20 +11,20 @@ export class SidebarComponent implements OnInit {
   items: any = [
     {
       name: "Home",
-      value: "/homepage"
-    }, 
-    {
-      name: "Video",
-      value: "/video"
-    }, 
+      value: "homepage"
+    },
     {
       name: "Contact",
-      value: "/contact"
-    }, 
+      value: "contact"
+    },
     {
       name: "About",
-      value: "/homepage"
-    }, 
+      value: "about"
+    },
+    {
+      name: "Apps",
+      value: "apps"
+    },
   ];
 
   constructor() { }

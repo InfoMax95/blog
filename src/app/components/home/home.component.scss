@@ -1,32 +1,42 @@
 .home {
-    width: 100%;
-    height: 100%;
-    .main-left {
-        float: left;
-        width: 70%;
-        height: 100%;
-        padding: 20px;
-        background-color: red; // da eliminare dopo test
-        .main-left-up {
-            width: 100%;
-            height: 50%;
-            background-color: chocolate;
+  margin: 40px 0 0 0;
+  display: flex;
+  .posts-container {
+    width: calc(80% - 35px);
+    margin-right: 35px;
+    mat-paginator {
+      border-radius: 20px;
+    }
+  }
+  .container-types {
+    width: 20%;
+    padding: 15px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    h3 {
+      color: rgba($color: #000000, $alpha: 0.6);
+      font-size: 13px;
+    }
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin: 0 0 7px 0;
+      input {
+        width: 20px;
+        height: 20px;
+        &:hover {
+          cursor: pointer;
         }
-        .main-left-down {
-            width: 100%;
-            height: 50%;
-            background-color: green;
-        }
+      }
+      label  {
+        text-transform: capitalize;
+        padding-left: 7px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        color: rgba($color: #000000, $alpha: 0.6);
+      }
     }
-    .main-right {
-        width: 30%;
-        height: 100%;
-        background-color: violet;
-        float: right; // da eliminare dopo test
-    }
-    &::after {
-        content: '';
-        clear: both;
-        display: table;
-    }
+  }
 }

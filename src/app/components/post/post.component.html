@@ -1,0 +1,28 @@
+<div class="container-post">
+  <div class="image-background">
+    <img src="{{getMainUrlFromPost(post)}}" alt="main-photo">
+  </div>
+  <h1 class="title">{{post.title}}</h1>
+  <div class="subtitle">
+    <p>{{post.subtitle}}</p>
+  </div>
+  <div class="line-separator"></div>
+  <p class="first-content">
+    {{post.firstContent}}
+  </p>
+  <div class="image-content">
+    <img src="{{getFirstImage(post)}}" alt="">
+  </div>
+  <p class="second-content">
+    {{post.secondContent}}
+  </p>
+  <div class="image-content">
+    <img src="{{getSecondImage(post)}}" alt="">
+  </div>
+  <p class="third-content">
+    {{post.thirdContent}}
+  </p>
+  <div class="image-content">
+    <img src="{{getThirdImage(post)}}" alt="">
+  </div>
+</div>

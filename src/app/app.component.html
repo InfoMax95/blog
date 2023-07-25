@@ -1,10 +1,13 @@
+<ngx-spinner>
+  <h3 id="loading">Loading...</h3>
+</ngx-spinner>
+<header>
+  <div class="toolbar">
+    <app-sidebar></app-sidebar>
+  </div>
+</header>
 <main>
-  <div class="container">
-    <div class="sidebar">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="router">
-      <router-outlet></router-outlet>
-    </div>
+  <div class="router">
+    <router-outlet></router-outlet>
   </div>
 </main>

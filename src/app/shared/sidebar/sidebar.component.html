@@ -1,6 +1,11 @@
 <div class="container">
-    <ul>
-        <!-- // questi saranno dei router link -->
-        <li *ngFor="let item of items; index as i"><a [routerLink]="[item.value]">{{item.name}}</a></li>
-    </ul>
+  <div class="logo">
+    <img src="../../assets/images/MG.png" alt="logo">
+  </div>
+  <ul>
+      <!-- // questi saranno dei router link -->
+      <li *ngFor="let item of items; index as i">
+        <a [routerLink]="[item.value]" routerLinkActive="active">{{item.name}}</a>
+      </li>
+  </ul>
 </div>

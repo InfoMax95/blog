@@ -1,0 +1,17 @@
+<div class="container-form">
+  <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+    <!-- con il binding della proprietà formGroup sincronizzo i dati con typescript -->
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" formControlName="title">
+    <label for="content">Content</label>
+    <textarea minlength="100" maxlength="4000" id="content" name="content" rows="4" formControlName="content"></textarea>
+    <label for="subtitle">Subtitle</label>
+    <input type="text" name="subtitle" id="subtitle" formControlName="subtitle">
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" formControlName="description">
+    <!-- <label for="authorID">Autore</label>
+    <input type="number" name="authorID" id="authorID" formControlName="authorID"> -->
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    <!-- attribuiamo l'attributo disabled direttamente al parametro di angular riguardo al componente e verifichiamo se è valido -->
+  </form>
+</div>

@@ -1,14 +1,29 @@
-<section class="home">
-    <div class="main-left">
-        <div class="main-left-up">
-
-        </div>
-        <div class="main-left-down">
-
-        </div>
+<div class="home">
+  <div class="posts-container" *ngIf="posts && filteredPosts">
+    <div class="selector-post" *ngIf="selectedTypes.length > 0; else allPosts" >
+      <div class="posts" *ngFor="let filteredPost of filteredPosts">
+        <app-post-card [post]="filteredPost"></app-post-card>
+      </div>
     </div>
-    <div class="main-right">
-
+    <ng-template #allPosts>
+      <div class="posts" *ngFor="let post of posts">
+        <app-post-card [post]="post"></app-post-card>
+      </div>
+    </ng-template>
+    <mat-paginator [length]="posts.length"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10]"
+                aria-label="Select page">
+    </mat-paginator>
+  </div>
+  <div class="container-types">
+    <h3>Filtra per tipologia:</h3>
+    <div class="checkbox" *ngFor="let type of types">
+      <input type="checkbox"
+      [id]="type.name" [name]="type.name"
+      [value]="type.name"
+      (change)="eventCheck($event)">
+      <label [for]="type.name">{{type.name}}</label>
     </div>
-</section>
-<!-- <p>home works!</p> -->
+  </div>
+</div>

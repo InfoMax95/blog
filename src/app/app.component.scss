@@ -1,28 +1,20 @@
+/* NGX SPINNER */
+#loading {
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  // max-width: 1920px;
+  margin: auto;
+  .toolbar {
+    height: 50px;
+  }
+}
+
+/* MAIN */
 main {
-  width: 100vw;
-  max-width: 1920px;
-  height: 100vh;
-}
-.container {
-  width: 100%;
-  height: 100%;
-}
-.sidebar {
-  width: 10%;
-  max-width: 200px;
-  height: 100%;
-  float: left;
-  background-color: aquamarine; // delete after test
-}
-.router {
-  width: 90%;
-  height: 100%;
-  margin-left: 10%;
-  background-color: black; // delete after test
-}
-// fix float
-.container::after {
-  content: '';
-  clear: both;
-  display: table;
+  max-width: 1080px;
+  margin: auto;
+
 }
