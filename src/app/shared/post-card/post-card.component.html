@@ -16,13 +16,10 @@
   </div>
   <div class="author">
     <img src="../../assets/images/avatar.JPG" alt="avatar">
-    <div>{{post.authorName.toUpperCase()}}</div>
+    <div>{{post.author.toUpperCase()}}</div>
   </div>
+  <!-- <div class="break"></div> -->
 </div>
 
-<mat-paginator [length]="postLength"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10]"
-              aria-label="Select page">
-</mat-paginator>
+
 

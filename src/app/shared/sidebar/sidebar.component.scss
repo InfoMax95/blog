@@ -1,7 +1,7 @@
 .container {
     width: 100%;
     height: 100%;
-    background: radial-gradient(#022539, #06364d);
+    background: #fff;
     color: 06364d;
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@ ul {
 }
 li {
   a {
-    color: #fff;
+    color: rgba($color: #000000, $alpha: 0.6);
     text-decoration: none;
   }
   .active {

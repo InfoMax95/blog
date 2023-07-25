@@ -1,40 +1,28 @@
 <div class="container-post">
-  <div class="image-background" *ngIf="existImage; else img_default">
-    <img src="" alt="">
+  <div class="image-background">
+    <img src="{{getMainUrlFromPost(post)}}" alt="main-photo">
   </div>
-  <ng-template #img_default>
-    <div class="image-background">
-      <img src="../../assets/images/jumbo.jpg" alt="default-img">
-    </div>
-  </ng-template>
   <h1 class="title">{{post.title}}</h1>
+  <div class="subtitle">
+    <p>{{post.subtitle}}</p>
+  </div>
   <div class="line-separator"></div>
   <p class="first-content">
-    {{post.content}}
+    {{post.firstContent}}
   </p>
-  <div class="image-content" *ngIf="imageFirstContentExist; else img_first_default">
-    <img src="" alt="">
+  <div class="image-content">
+    <img src="{{getFirstImage(post)}}" alt="">
   </div>
-  <ng-template #img_first_default>
-    <div class="image-content">
-      <img src="../../assets/images/jumbo.jpg" alt="default-img">
-    </div>
-  </ng-template>
   <p class="second-content">
-    {{post.content}}
+    {{post.secondContent}}
   </p>
-  <p class="description">
-    {{post.content}}
-  </p>
-  <div class="image-example" *ngIf="imageSecondContentExist; else img_second_default">
-    <img src="" alt="">
+  <div class="image-content">
+    <img src="{{getSecondImage(post)}}" alt="">
   </div>
-  <ng-template #img_second_default>
-    <div class="image-example">
-      <img src="../../assets/images/jumbo.jpg" alt="default-img">
-    </div>
-  </ng-template>
-  <p class="footer">
-    {{post.description}}
+  <p class="third-content">
+    {{post.thirdContent}}
   </p>
+  <div class="image-content">
+    <img src="{{getThirdImage(post)}}" alt="">
+  </div>
 </div>

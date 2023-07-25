@@ -1,12 +1,7 @@
-import { Post } from "./post";
-
-export class PostParams {
+export interface PostParams {
   pageNumber: number;
   pageSize: number;
-  type: number;
-
-  // constructor(post: Post) {
-  // }
+  type: string;
 }
 
 

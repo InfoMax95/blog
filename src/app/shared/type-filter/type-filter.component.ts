@@ -21,7 +21,6 @@ export class TypeFilterComponent implements OnInit {
   private getTypes() {
     this.typeService.getTypes().subscribe({
       next: res => {
-        console.log(res);
         this.types = res;
       },
       error: err => console.log(err)

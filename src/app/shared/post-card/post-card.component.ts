@@ -9,7 +9,6 @@ import { Post } from 'src/app/models/post';
 export class PostCardComponent implements OnInit {
 
   @Input() post: Post;
-  @Input() postLength: number;
 
   public imageExist: boolean = false;
 
@@ -24,9 +23,9 @@ export class PostCardComponent implements OnInit {
     while(i < post.photos.length) {
       let photo = post.photos[i];
       if(photo.isMain) url = photo.url;
-      else url = "../../assets/images/jumbo.jpg"; // default img
       i++;
     };
+    if (url == "") url = "../../assets/images/jumbo.jpg"; // default img
     return url;
   }
 

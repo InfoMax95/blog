@@ -15,7 +15,7 @@ export class TypeService {
   constructor(private http: HttpClient) { }
 
   public getTypes() {
-    return this.http.get<Type[]>(`${this.baseUrl}types`).pipe(
+    return this.http.get<Type[]>(`${this.baseUrl}typologies`).pipe(
       map( types => {
         this.types = types;
         return types;

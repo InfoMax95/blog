@@ -1,16 +1,29 @@
 <div class="home">
-  <!-- <div class="image">
-    <img src="../../assets/images/background.jpg" alt="jumbo-photo">
-    <div class="me">
-      <img src="../../assets/images/MG.png" alt="logo">
-      <div class="name">
-        <p>massimiliano</p>
-        <p>gasaro</p>
+  <div class="posts-container" *ngIf="posts && filteredPosts">
+    <div class="selector-post" *ngIf="selectedTypes.length > 0; else allPosts" >
+      <div class="posts" *ngFor="let filteredPost of filteredPosts">
+        <app-post-card [post]="filteredPost"></app-post-card>
       </div>
     </div>
-  </div> -->
-  <div class="posts" *ngFor="let post of posts">
-    <app-post-card [post]="post" [postLength]="posts.length"></app-post-card>
+    <ng-template #allPosts>
+      <div class="posts" *ngFor="let post of posts">
+        <app-post-card [post]="post"></app-post-card>
+      </div>
+    </ng-template>
+    <mat-paginator [length]="posts.length"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10]"
+                aria-label="Select page">
+    </mat-paginator>
   </div>
-  <app-type-filter></app-type-filter>
+  <div class="container-types">
+    <h3>Filtra per tipologia:</h3>
+    <div class="checkbox" *ngFor="let type of types">
+      <input type="checkbox"
+      [id]="type.name" [name]="type.name"
+      [value]="type.name"
+      (change)="eventCheck($event)">
+      <label [for]="type.name">{{type.name}}</label>
+    </div>
+  </div>
 </div>

@@ -1,11 +1,20 @@
-header{
-  max-width: 1080px;
+/* NGX SPINNER */
+#loading {
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  // max-width: 1920px;
   margin: auto;
   .toolbar {
     height: 50px;
   }
 }
+
+/* MAIN */
 main {
   max-width: 1080px;
   margin: auto;
+
 }

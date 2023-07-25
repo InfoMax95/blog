@@ -1,37 +1,44 @@
 .container-post {
   width: 70%;
-  margin: auto;
-  font-size: 1rem;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
   .image-background {
     img {
       width: 100%;
-      max-height: 600px;
-      margin-top: 2rem;
+      max-height: 500px;
+      margin-top: 20px;
+      border-radius: 20px;
     }
   }
   .title {
-    margin-top: 150px;
-    font-size: 2.5rem;
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .subtitle {
     font-weight: bolder;
   }
   .line-separator {
     width: 150px;
     height: 5px;
     background-color: grey;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
   }
-  .first-content {
+  .first-content, .second-content, .third-content {
     font-style: italic;
   }
-  .image-content, .image-example {
+  .image-content {
     img {
       width: 100%;
       max-height: 500px;
+      object-fit: contain;
+      border-radius: 20px;
     }
   }
 }
 
-.first-content, .second-content, .description, .footer {
-  margin: 3.5rem 0;
+.first-content, .second-content, .third-content, .description, .footer {
   line-height: 1.6;
 }
