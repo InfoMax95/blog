@@ -1,4 +1,4 @@
-<div class="home" [ngClass]="{'is-mobile': isPhone}">
+<div class="home" [ngClass]="{'is-mobile': isPhone, 'is-tablet': isTablet}">
   <div class="posts-container" *ngIf="posts && filteredPosts">
     <div class="selector-post" *ngIf="selectedTypes.length > 0; else allPosts" >
       <div *ngIf="filteredPosts.length > 0; else nodatafound">

@@ -15,6 +15,11 @@ $white: #fff;
     margin: 20px 0 0 0;
     height: calc(100vh - 120px);
   }
+  &.is-tablet {
+    border-radius: 0;
+    margin: 20px 0 0 0;
+    height: calc(100vh - 120px);
+  }
   .container__item {
     .content__wrapper {
       position: relative;
@@ -24,6 +29,9 @@ $white: #fff;
         &.is-mobile {
           padding: 2rem 0;
         }
+        &.is-tablet {
+          padding: 2rem 0;
+        }
         .social-container {
           list-style: none;
           .social__icon {
@@ -31,6 +39,9 @@ $white: #fff;
             display: inline-block;
             margin-right: 10px;
             &.is-mobile {
+              margin: 0 15px;
+            }
+            &.is-tablet {
               margin: 0 15px;
             }
             #yt {
@@ -74,6 +85,11 @@ $white: #fff;
           height: 18rem;
           margin: auto;
         }
+        &.is-tablet {
+          width: 18rem;
+          height: 18rem;
+          margin: auto;
+        }
         .greeting {
           position: absolute;
           top: 11.6rem;
@@ -86,6 +102,13 @@ $white: #fff;
           font-weight: 400;
           opacity: 0.5;
           &.is-mobile {
+            top: 2rem;
+            left: 5.7rem;
+            margin: 0 auto;
+            letter-spacing: 1rem;
+            font-size: 0.8rem;
+          }
+          &.is-tablet {
             top: 2rem;
             left: 5.7rem;
             margin: 0 auto;
@@ -113,6 +136,10 @@ $white: #fff;
             top: 5rem;
             right: 6.75rem;
             &.is-mobile {
+              top: 1rem;
+              right: 1.9rem;
+            }
+            &.is-tablet {
               top: 1rem;
               right: 1.9rem;
             }

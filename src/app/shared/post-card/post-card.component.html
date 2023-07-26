@@ -1,4 +1,4 @@
-<div class="post" *ngIf="post; else nodatafound" [ngClass]="{'is-mobile': isPhone}">
+<div class="post" *ngIf="post; else nodatafound" [ngClass]="{'is-mobile': isPhone, 'is-tablet': isTablet}">
   <div class="image">
     <img src="{{getMainUrlFromPost(post)}}" alt="">
   </div>

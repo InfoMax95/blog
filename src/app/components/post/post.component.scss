@@ -42,6 +42,11 @@
     width: 100%;
     margin: 20px 0 0 0;
   }
+  &.is-tablet {
+    border-radius: 0;
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
 }
 
 .first-content, .second-content, .third-content, .description, .footer {
