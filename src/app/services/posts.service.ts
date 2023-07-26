@@ -28,7 +28,7 @@ export class PostsService {
     let params = this.getPaginationHeader(postParams.pageNumber, postParams.pageSize);
 
     // const elements = postParams.type.join("-");
-    params = params.append("type", postParams.type);
+    // params = params.append("type", postParams.type);
 
     return this.getPaginatedResult<Post[]>(this.baseUrl + "posts", params).pipe(
       map(response => {

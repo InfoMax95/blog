@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Pagination } from 'src/app/models/pagination';
 import { Post } from 'src/app/models/post';
 import { PostParams } from 'src/app/models/postParams';
@@ -14,24 +15,45 @@ import { TypeService } from 'src/app/services/type.service';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('paginator', { static: true }) paginator: MatPaginator;
+
   posts: Post[];
   filteredPosts: Post[] = [];
   pagination: Pagination | undefined;
   postParams: PostParams | undefined = {
-    pageNumber: 1,
-    pageSize: 3,
-    type: "All"
+    pageNumber: 0,
+    pageSize: 5
   };
+
+  // responsive variables
+  isPhone: boolean = false;
+  isTablet: boolean = false;
 
   checkboxes: any | undefined;
   types: Type[] = [];
   selectedTypes: string[] = [];
 
-  constructor(private postsService: PostsService, private typeService: TypeService) { }
+  constructor(private postsService: PostsService, private typeService: TypeService,
+    private responsive: BreakpointObserver) { }
 
   ngOnInit(): void {
-   this.loadPosts();
-   this.getTypes();
+    this.responsive.observe([Breakpoints.HandsetPortrait, Breakpoints.TabletPortrait])
+      .subscribe(result => {
+        const breakpoints = result.breakpoints;
+        // reset variables
+        this.isPhone = false;
+        this.isTablet = false;
+
+        if (breakpoints[Breakpoints.HandsetPortrait]) {
+          console.log("screens matches Handset"); // to debug
+          this.isPhone = true;
+        } else if (breakpoints[Breakpoints.TabletPortrait]) {
+          console.log("Tablet responsive matches") // to debug
+          this.isTablet = true;
+        }
+      });
+    this.loadPosts();
+    this.getTypes();
   }
 
   public eventCheck(event: Event) {
@@ -42,6 +64,12 @@ export class HomeComponent implements OnInit {
       return type !== element;
     })
     this.filterPosts(this.selectedTypes);
+  }
+
+  public pageChangeEvent(event: PageEvent) {
+    this.postParams!.pageSize = event.pageSize;
+    this.postParams!.pageNumber = event.pageIndex;
+    this.loadPosts();
   }
 
   private filterPosts(array: string[]) {

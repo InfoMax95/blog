@@ -5,7 +5,6 @@
 
 /* HEADER */
 header {
-  // max-width: 1920px;
   margin: auto;
   .toolbar {
     height: 50px;
@@ -16,5 +15,21 @@ header {
 main {
   max-width: 1080px;
   margin: auto;
-
 }
+
+/* FOOTER */
+footer {
+  max-width: 1080px;
+  margin: auto;
+  .footer {
+    height: 50px;
+    line-height: 50px;
+    &.is-mobile {
+      font-size: 11px;
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+

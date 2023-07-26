@@ -3,6 +3,9 @@
   background-color: #fff;
   padding: 10px;
   border-radius: 20px;
+  &.is-mobile {
+    border-radius: 0;
+  }
   .image {
     margin: 0 0 15px 0;
     img{

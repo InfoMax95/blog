@@ -6,6 +6,17 @@
     margin-right: 35px;
     mat-paginator {
       border-radius: 20px;
+      opacity: 0.6;
+    }
+    .no-data {
+      background-color: #fff;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 20px;
+      border-radius: 20px;
     }
   }
   .container-types {
@@ -37,6 +48,23 @@
         font-weight: 600;
         color: rgba($color: #000000, $alpha: 0.6);
       }
+    }
+  }
+  &.is-mobile {
+    margin: 20px 0 0 0;
+    flex-direction: column-reverse;
+    .posts-container {
+      width: 100%;
+      mat-paginator {
+        border-radius: 0;
+        opacity: 0.6;
+      }
+    }
+    .container-types {
+      width: 100%;
+      height: 200px;
+      border-radius: 0;
+      margin-bottom: 20px;
     }
   }
 }

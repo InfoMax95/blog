@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
 
@@ -12,9 +13,28 @@ export class PostCardComponent implements OnInit {
 
   public imageExist: boolean = false;
 
-  constructor() { }
+  // responsive variables
+  isPhone: boolean = false;
+  isTablet: boolean = false;
+
+  constructor(private responsive: BreakpointObserver) { }
 
   ngOnInit(): void {
+    this.responsive.observe([Breakpoints.HandsetPortrait, Breakpoints.TabletPortrait])
+      .subscribe(result => {
+        const breakpoints = result.breakpoints;
+        // reset variables
+        this.isPhone = false;
+        this.isTablet = false;
+
+        if (breakpoints[Breakpoints.HandsetPortrait]) {
+          console.log("screens matches Handset"); // to debug
+          this.isPhone = true;
+        } else if (breakpoints[Breakpoints.TabletPortrait]) {
+          console.log("Tablet responsive matches") // to debug
+          this.isTablet = true;
+        }
+      });
   }
 
   public getMainUrlFromPost(post: Post): string {

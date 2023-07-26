@@ -1,1 +1,26 @@
-<p>about works!</p>
+<div class="container" [ngClass]="{'is-mobile': isPhone}">
+  <div class="container__item landing-page-container">
+      <div class="content__wrapper">
+          <div class="header" [ngClass]="{'is-mobile': isPhone}">
+              <ul class="social-container header__item">
+                  <li class="social__icon social__icon--fb" [ngClass]="{'is-mobile': isPhone}">
+                    <a href="#"><fa-icon id="yt" [icon]="['fab', 'youtube']"></fa-icon></a>
+                  </li>
+                  <li class="social__icon social__icon--dr" [ngClass]="{'is-mobile': isPhone}">
+                    <a href="#"><fa-icon id="gh" [icon]="['fab', 'github']"></fa-icon></a>
+                  </li>
+                  <li class="social__icon social__icon--in" [ngClass]="{'is-mobile': isPhone}">
+                    <a href="#"><fa-icon id="linkedin" [icon]="['fab', 'linkedin']"></fa-icon></a>
+                  </li>
+              </ul>
+          </div>
+          <div class="ellipses-container" [ngClass]="{'is-mobile': isPhone}">
+              <h2 class="greeting" [ngClass]="{'is-mobile': isPhone}">Hello</h2>
+              <div class="ellipses ellipses__outer--thin" [ngClass]="{'is-mobile': isPhone}">
+                  <div class="ellipses ellipses__orbit" [ngClass]="{'is-mobile': isPhone}"></div>
+              </div>
+              <div class="ellipses ellipses__outer--thick" [ngClass]="{'is-mobile': isPhone}"></div>
+          </div>
+      </div>
+  </div>
+</div>

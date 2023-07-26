@@ -30,6 +30,14 @@ import { TypeFilterComponent } from './shared/type-filter/type-filter.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptor/loading.interceptor';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import {
+  faGithub,
+  faFacebook,
+  faTwitter,
+  faLinkedin,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   declarations: [
@@ -66,7 +74,8 @@ import { LoadingInterceptor } from './_interceptor/loading.interceptor';
     MatPaginatorModule,
     NgxSpinnerModule.forRoot({
       type: "square-jelly-box"
-    })
+    }),
+    FontAwesomeModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
@@ -74,4 +83,14 @@ import { LoadingInterceptor } from './_interceptor/loading.interceptor';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faGithub,
+      faFacebook,
+      faTwitter,
+      faLinkedin,
+      faYoutube,
+    )
+  }
+}

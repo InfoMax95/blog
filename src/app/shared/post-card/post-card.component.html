@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" *ngIf="post; else nodatafound" [ngClass]="{'is-mobile': isPhone}">
   <div class="image">
     <img src="{{getMainUrlFromPost(post)}}" alt="">
   </div>
@@ -20,6 +20,11 @@
   </div>
   <!-- <div class="break"></div> -->
 </div>
+<ng-template #nodatafound>
+  <div class="no-data-found" >
+    NESSUN POST TROVATO
+  </div>
+</ng-template>
 
 
 
